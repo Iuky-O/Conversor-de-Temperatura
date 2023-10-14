@@ -1,1 +1,139 @@
 # Aqui está o código ...
+
+
+using System;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+
+using Conversor.Function;
+
+public class Principal {
+    
+  static void Main() {
+      
+    int decisao = 0;
+    
+    ConvertTemp var = new ConvertTemp();
+    
+    while(decisao != 5){
+    
+                Console.WriteLine("Conversor");
+                Console.WriteLine("1 - CELCIUS - FAHRENHEIT");
+                Console.WriteLine("2 - FAHRENHEIT - CELCIUS");
+                Console.WriteLine("3 - CELCIUS - KELVIN");
+                Console.WriteLine("4 - KELVIN - CELCIUS");
+                Console.WriteLine("5 - FAHRENHEIT - KELVIN");
+                Console.WriteLine("6 - KELVIN - FAHRENHEIT");
+                Console.WriteLine("7 - FINALIZAR");
+                Console.Write(" --> ");
+                decisao = int.Parse(Console.ReadLine());
+    
+                switch (decisao){
+                    case 1:
+                        Console.WriteLine("°F - {0}", var.CelsiusFahrenheit());
+                        break;
+                    case 2:
+                        Console.WriteLine();
+                        break;
+                    case 3:
+                        Console.WriteLine();
+                        break;
+                    case 4:
+                        Console.WriteLine();
+                        break;
+                    case 5:
+                        Console.WriteLine();
+                    break;
+                    case 6:
+                        Console.WriteLine();
+                        break;
+                    case 7:
+                        Console.WriteLine("PROGRAMA FINALIZADO!");
+                    break;
+                    default:
+                        Console.WriteLine("Valor invalido!");
+                    break;
+    
+    
+                }
+            }
+    
+  }
+}
+
+
+
+_____________________________________________________________________________
+
+
+
+using System;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+
+namespace Conversor.Function{
+    
+    public class ConvertTemp{
+        
+        public double CelsiusFahrenheit(){
+            
+            double Result_F;
+            
+            Console.Write("°C - ");
+            double C = double.Parse(Console.ReadLine()); 
+            
+            Result_F = 1.8 * C + 32;
+            
+            return Result_F;
+            
+        }
+        
+        public double FahrenheitCelsius(double F, double C){
+            
+            double Result_C;
+            
+            Result_C = F - 32 / 1.8;
+            
+            return Result_C;
+            
+        }
+        
+        public double CelsiusKelvin(double C, double K){
+            
+            double Result_K;
+            
+            Result_K = C + 273;
+            
+            return Result_K;
+        }
+        
+        public double KelvinCelcius(double K, double C){
+            
+            double Result_C;
+            
+            Result_C = K - 273;
+            
+            return Result_C;
+        }
+        
+        public double FahrenheitKelvin(double F, double K){
+            
+            double Result_K;
+            
+            Result_K = (F - 32) * 5/9 + 273;
+            
+            return Result_K;
+            
+        }
+        
+        public double KelvinFahrenheit(double K, double F){
+            
+            double Result_F;
+            
+            Result_F = (K - 273) * 1.8 + 32;
+            
+            return Result_F;
+            
+        }
+    }
+}
