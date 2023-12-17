@@ -1,5 +1,3 @@
-# Aqui está o código ...
-
 
 using System;
 using System.Runtime.CompilerServices;
@@ -15,7 +13,7 @@ public class Principal {
     
     ConvertTemp var = new ConvertTemp();
     
-    while(decisao != 5){
+    while(decisao != 7){
     
                 Console.WriteLine("Conversor");
                 Console.WriteLine("1 - CELCIUS - FAHRENHEIT");
@@ -33,26 +31,26 @@ public class Principal {
                         Console.WriteLine("°F - {0}", var.CelsiusFahrenheit());
                         break;
                     case 2:
-                        Console.WriteLine();
+                        Console.WriteLine("°C - {0}", var.FahrenheitCelsius());
                         break;
                     case 3:
-                        Console.WriteLine();
+                        Console.WriteLine("°K - {0}", var.CelsiusKelvin());
                         break;
                     case 4:
-                        Console.WriteLine();
+                        Console.WriteLine("°C - {0}", var.KelvinCelcius());
                         break;
                     case 5:
-                        Console.WriteLine();
-                    break;
+                        Console.WriteLine("°K - {0}", var.FahrenheitKelvin());
+                        break;
                     case 6:
-                        Console.WriteLine();
+                        Console.WriteLine("°F - {0}", var.KelvinFahrenheit());
                         break;
                     case 7:
                         Console.WriteLine("PROGRAMA FINALIZADO!");
-                    break;
+                        break;
                     default:
                         Console.WriteLine("Valor invalido!");
-                    break;
+                        break;
     
     
                 }
@@ -60,7 +58,6 @@ public class Principal {
     
   }
 }
-
 
 
 _____________________________________________________________________________
@@ -88,49 +85,64 @@ namespace Conversor.Function{
             
         }
         
-        public double FahrenheitCelsius(double F, double C){
+        public double FahrenheitCelsius(){
             
             double Result_C;
+
+            Console.Write("°F - ");
+            double F = double.Parse(Console.ReadLine());
             
-            Result_C = F - 32 / 1.8;
+            Result_C = (F - 32) / 1.8;
             
             return Result_C;
             
         }
         
-        public double CelsiusKelvin(double C, double K){
+        public double CelsiusKelvin(){
             
             double Result_K;
             
-            Result_K = C + 273;
+            Console.Write("°C - ");
+            double C = double.Parse(Console.ReadLine());
+            
+            Result_K = C + 273.15;
             
             return Result_K;
         }
         
-        public double KelvinCelcius(double K, double C){
+        public double KelvinCelcius(){
             
             double Result_C;
             
-            Result_C = K - 273;
+            Console.Write("°K - ");
+            double K = double.Parse(Console.ReadLine());
+            
+            Result_C = K - 273.15;
             
             return Result_C;
         }
         
-        public double FahrenheitKelvin(double F, double K){
+        public double FahrenheitKelvin(){
             
             double Result_K;
             
-            Result_K = (F - 32) * 5/9 + 273;
+            Console.Write("°F - ");
+            double F = double.Parse(Console.ReadLine());
+            
+            Result_K = (F - 32) * 5/9 + 273.15;
             
             return Result_K;
             
         }
         
-        public double KelvinFahrenheit(double K, double F){
+        public double KelvinFahrenheit(){
             
             double Result_F;
             
-            Result_F = (K - 273) * 1.8 + 32;
+            Console.Write("°K - ");
+            double K = double.Parse(Console.ReadLine());
+            
+            Result_F = (K - 273.15) * 9/5 + 32;
             
             return Result_F;
             
